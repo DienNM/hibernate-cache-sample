@@ -24,8 +24,19 @@
         <property name="hibernate.c3p0.max_statements">50</property>
         <property name="hibernate.c3p0.idle_test_period">3000</property>
         
+        <!-- Cache HBN 3.3 -->
+        <!-- <property name="hibernate.cache.region.factory_class">
+            net.sf.ehcache.hibernate.EhCacheRegionFactory</property> -->
+         
+        <!-- Cache -->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+        <property name="hibernate.cache.provider_configuration_file_resource_path">cache/hibernate-ehcache.xml</property>
+        <property name="hibernate.cache.provider_class"></property>
+        
 		<!-- <mapping resource="mapping/hibernate.hbm.xml" /> -->
-		<mapping class="com.dee.hibernate.model.UserModel"/>
+		<mapping class="com.dee.hibernate.cache.model.CategoryModel"/>
+        <mapping class="com.dee.hibernate.cache.model.ItemModel"/>
 		
 	</session-factory>
 </hibernate-configuration>
