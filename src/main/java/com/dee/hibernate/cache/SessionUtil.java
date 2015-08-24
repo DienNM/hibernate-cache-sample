@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.stat.Statistics;
 
 /**
  * @author dien.nguyen
@@ -35,6 +36,14 @@ public final class SessionUtil {
     
     public static Session getSession() {
         return getInstance().sessionFactory.openSession();
+    }
+    
+    public static Statistics getStatistic() {
+        return getInstance().sessionFactory.getStatistics();
+    }
+    
+    public static SessionFactory getSessionFactory() {
+        return getInstance().sessionFactory;
     }
     
 }

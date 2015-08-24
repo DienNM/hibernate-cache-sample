@@ -22,8 +22,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
  * @author dien.nguyen
  **/
 
-@Entity(name = "category_2rdcache")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+@Entity(name = "category_cache")
 public class CategoryModel implements Serializable{
 
     private static final long serialVersionUID = 1L;
